@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ruleset name="Custom Apex Rules"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0
+                        http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+    <description>
+        This is a custom ruleset for Apex, including ApexDoc rules.
+    </description>
+
+    <!-- Include the Apex rules -->
+    <rule ref="category/apex/documentation.xml">
+        <include name="ApexDoc"/>
+    </rule>
+
+    <!-- Specific ApexDoc rule configuration -->
+    <rule name="ApexDoc"
+          message="Ensure proper ApexDoc comments"
+          class="net.sourceforge.pmd.lang.apex.rule.documentation.ApexDocRule">
+        <description>
+            This rule checks for proper ApexDoc comments.
+        </description>
+        <priority>3</priority>
+        <properties>
+            <property name="reportMissingDescription" value="true"/>
+        </properties>
+    </rule>
+
+    <!-- You can add more Apex-specific rules here -->
+
+</ruleset>
